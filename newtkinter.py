@@ -40,7 +40,7 @@ def checklist_to_l(event):
     v1=var1.get()
     v2=var2.get()
     jarjend=[v1,v2]
-    l.delete(0,1)#read
+    l.delete(0,1)#read.
     for item in jarjend:
         l.insert(END,item)
 
