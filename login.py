@@ -1,27 +1,57 @@
-from module1 import *
+
 from tkinter import *
-logins={"admin":"admin1"}
-passwords={"admin1":"admin"}
+logins={}
+passwords={}
+listforupdate=[]
 aken=Tk()
-aken.geometry("600x600")
+aken.geometry("450x450")
 aken.title("Menu")
 aken.iconbitmap("images.ico")
 
+
+f=open("dictionary.txt", "r", encoding="utf-8-sig")
+for line in f:
+    k, v=line.strip().split(":")
+    logins[k.strip()] = v.strip()
+    f=open("dictionary.txt", "r", encoding="utf-8-sig")
+for line in f:
+    k, v=line.strip().split(":")
+    passwords[v.strip()] = k.strip()
+    f=open("dictionary.txt", "r", encoding="utf-8-sig")
+
 def end():
+    f=open("dictionary.txt","w",encoding="utf-8-sig")
+    for key,vlaue in logins.items():
+        line=(f"{key}:{vlaue}")
+        listforupdate.append(line)
+    f=open("dictionary.txt","w",encoding="utf-8-sig")
+    for line in (listforupdate):
+        f.write(line+"\n")
+    f.close()
     aken.destroy()
 
 def check_autoriseerimine(ent1,ent2,dopaken):
-    if ent1.get() != "" and ent2.get() != "":
-        login = str(ent1.get())
-        password = str(ent2.get())
-        if logins[login]==password and passwords[password] == login:
-            dopaken.destroy()
-            dopaken=Toplevel()
-            lbl4=Label(dopaken,text="You in",height=2,width=40,font="Arial 24")
-            lbl4.pack()
-        else:
-            ent1.configure(bg="red")
-            ent2.configure(bg="red")
+    login = ent1.get()
+    password = ent2.get()
+    ll=login
+    pp=password
+    print(ll)
+    print(pp)
+    print(logins)
+    print(passwords)
+    if ent1.get() != "" and ent2.get() != "" :
+        #if passwords[pp] == ll and logins[ll] == pp:
+        #    lbl4=Label(dopaken,text="You in",height=2,width=40,font="Arial 24")
+        #    lbl4.pack()
+        for item in logins:
+            if logins[item] == password and passwords[password] == login:
+                lbl4=Label(dopaken,text="You in",height=2,width=40,font="Arial 24")
+                lbl4.pack()
+                ent1.configure(bg="lightblue")
+                ent2.configure(bg="lightblue")
+            else:
+                ent1.configure(bg="red")
+                ent2.configure(bg="red")
     else:
         ent1.configure(bg="red")
         ent2.configure(bg="red")
