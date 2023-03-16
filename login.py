@@ -40,7 +40,7 @@ def check_autoriseerimine(ent1,ent2,dopaken):
     print(logins)
     print(passwords)
     if ent1.get() != "" and ent2.get() != "" :
-        #if passwords[pp] == ll and logins[ll] == pp:
+        ##if passwords[pp] == ll and logins[ll] == pp:
         #    lbl4=Label(dopaken,text="You in",height=2,width=40,font="Arial 24")
         #    lbl4.pack()
         for item in logins:
