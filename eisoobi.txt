@@ -1,0 +1,5 @@
+﻿('Artur', '1')
+('Lina', '0')
+('Miron Zaharov', '1')
+('Natasha', '0')
+('asdsa', '1')

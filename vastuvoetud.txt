@@ -1,0 +1,8 @@
+﻿('Dilan', '4')
+('Denis Vladov', '3')
+('Kiril', '3')
+('Akumaqqe', '3')
+('nikita', '2')
+('Misha', '2')
+('Maks Ivanov', '2')
+('Zxcursed', '2')

@@ -23,13 +23,19 @@
   <ItemGroup>
     <Compile Include="login.py" />
     <Compile Include="MEnu_tabs.py" />
+    <Compile Include="minumoodul.py" />
     <Compile Include="newtkinter.py" />
+    <Compile Include="Tarkvaraarendaja_vastuvott.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="eisoobi.txt" />
     <Content Include="hello-kitty-icon-29.png" />
     <Content Include="images.ico" />
     <Content Include="images.png" />
     <Content Include="dictionary.txt" />
+    <Content Include="koik.txt" />
+    <Content Include="vastus.txt" />
+    <Content Include="vastuvoetud.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

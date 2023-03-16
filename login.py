@@ -1,4 +1,4 @@
-
+import subprocess
 from tkinter import *
 logins={}
 passwords={}
@@ -45,13 +45,14 @@ def check_autoriseerimine(ent1,ent2,dopaken):
         #    lbl4.pack()
         for item in logins:
             if logins[item] == password and passwords[password] == login:
-                lbl4=Label(dopaken,text="You in",height=2,width=40,font="Arial 24")
-                lbl4.pack()
-                ent1.configure(bg="lightblue")
-                ent2.configure(bg="lightblue")
-            else:
-                ent1.configure(bg="red")
-                ent2.configure(bg="red")
+                dopaken.destroy()
+                aken.destroy()
+                subprocess.call(["python", "Tarkvaraarendaja_vastuvott.py"])
+            #    lbl4=Label(dopaken,text="You in",height=2,width=40,font="Arial 24")
+            #    lbl4.pack()
+            #    ent1.configure(bg="lightblue")
+            #    ent2.configure(bg="lightblue")
+            #    dopaken.destroy()
     else:
         ent1.configure(bg="red")
         ent2.configure(bg="red")
