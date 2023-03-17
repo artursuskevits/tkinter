@@ -1,20 +1,20 @@
-What_is_programming?-is_the_process_of_creating_software_or_applications_using_programming_languages_such_as_Java_Python_and_other.
-What_is_a_variable_in_programming?-is_a_storage_location_in_a_computer's_memory_that_holds_a_value_that_can_change_during_the_program's_execution.
-What_is_a_function_in_programming?-is_a_block_of_code_that_performs_a_specific_task,_can_be_called_from_different_parts_of_the_program,_and_may_take_input_parameters_and_return_values.
-What_is_a_loop_in_programming-is_a_control_flow_statement_that_allows_a_program_to_repeatedly_execute_a_block_of_code_until_a_certain_condition_is_met.
-What_is_a_conditional_statement_in_programming-is_a_control_flow_statement_that_performs_different_actions_depending_on_whether_a_certain_condition_is_true_or_false.
-What_is_an_algorithm_in_programming-is_a_set_of_instructions_that_a_program_follows_to_solve_a_specific_problem_or_perform_a_specific_task.
-What_is_debugging_in_programming-is_the_process_of_finding_and_fixing_errors_or_defects_in_a_program.
-What_is_an_IDE_in_programming-is_a_software_application_that_provides_tools_and_features_to_help_developers_write_and_debug_code.
-What_is_version_control_in_programming-is_the_management_of_changes_to_a_set_of_files_over_time,_typically_used_in_software_development_to_track_changes_to_source_code.
-What_is_a_data_structure_in_programming-s_a_way_of_organizing_and_storing_data_in_a_computer's_memory,_such_as_arrays,_lists,_or_trees.
-What_is_object_oriented_programming-_is_a_programming_paradigm_that_uses_objects,_which_are_instances_of_classes,_to_represent_and_manipulate_data.
-What_is_a_class_in_programming-is_a_blueprint_for_creating_objects_that_define_the_attributes_and_behaviors_of_the_object.
-What_is_inheritance_in_programming-is_a_mechanism_in_object_oriented_programming_that_allows_a_class_to_inherit_attributes_and_behaviors_from_a_parent_class.
-What_is_polymorphism_in_programming-is_the_ability_of_objects_of_different_classes_to_be_treated_as_if_they_are_of_the_same_type,_allowing_for_more_flexible_and_reusable_code.
-What_is_encapsulation_in_programming-is_the_practice_of_hiding_the_internal_details_of_an_object_and_providing_a_public_interface_for_accessing_and_modifying_its_state.
-What_is_a_compiler_in_programming-is_a_program_that_translates_source_code_into_machine_code_that_can_be_executed_by_a_computer.
-What_is_an_interpreter_in_programming-is_a_program_that_executes_source_code_directly_without_compiling_it_into_machine_code_first.
-What_is_a_database_in_programming-is_a_structured_collection_of_data_that_can_be_accessed,_managed,_and_updated_through_software_applications.
-What_is_a_web_server_in_programming-is_a_program_that_listens_for_incoming_requests_from_clients_over_the_internet_and_serves_web_pages_or_other_content_in_response.
-What_is_an_API_in_programming-is_a_set_of_protocols_and_tools_for_building_software_applications_that_interact_with_other_software_applications_or_services.
+What is programming?-is the process of creating software or applications using programming languages such as Java Python and other.
+What is a variable in programming?-is a storage location in a computer's memory that holds a value that can change during the program's execution.
+What is a function in programming?-is a block of code that performs a specific task, can be called from different parts of the program, and may take input parameters and return values.
+What is a loop in programming-is a control flow statement that allows a program to repeatedly execute a block of code until a certain condition is met.
+What is a conditional statement in programming-is a control flow statement that performs different actions depending on whether a certain condition is true or false.
+What is an algorithm in programming-is a set of instructions that a program follows to solve a specific problem or perform a specific task.
+What is debugging in programming-is the process of finding and fixing errors or defects in a program.
+What is an IDE in programming-is a software application that provides tools and features to help developers write and debug code.
+What is version control in programming-is the management of changes to a set of files over time, typically used in software development to track changes to source code.
+What is a data structure in programming-s a way of organizing and storing data in a computer's memory, such as arrays, lists, or trees.
+What is object oriented programming- is a programming paradigm that uses objects, which are instances of classes, to represent and manipulate data.
+What is a class in programming-is a blueprint for creating objects that define the attributes and behaviors of the object.
+What is inheritance in programming-is a mechanism in object oriented programming that allows a class to inherit attributes and behaviors from a parent class.
+What is polymorphism in programming-is the ability of objects of different classes to be treated as if they are of the same type, allowing for more flexible and reusable code.
+What is encapsulation in programming-is the practice of hiding the internal details of an object and providing a public interface for accessing and modifying its state.
+What is a compiler in programming-is a program that translates source code into machine code that can be executed by a computer.
+What is an interpreter in programming-is a program that executes source code directly without compiling it into machine code first.
+What is a database in programming-is a structured collection of data that can be accessed, managed, and updated through software applications.
+What is a web server in programming-is a program that listens for incoming requests from clients over the internet and serves web pages or other content in response.
+What is an API in programming-is a set of protocols and tools for building software applications that interact with other software applications or services.

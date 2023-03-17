@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9363cceb-e1e7-4d15-b53b-056eb704857d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>login.py</StartupFile>
+    <StartupFile>Tarkvaraarendaja_vastuvott.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,7 @@
     <Compile Include="minumoodul.py" />
     <Compile Include="newtkinter.py" />
     <Compile Include="Tarkvaraarendaja_vastuvott.py" />
+    <Compile Include="класс1.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="eisoobi.txt" />
