@@ -46,7 +46,6 @@ def check_autoriseerimine(ent1,ent2,dopaken):
         for item in logins:
             if logins[item] == password and passwords[password] == login:
                 dopaken.destroy()
-                aken.destroy()
                 subprocess.call(["python", "Tarkvaraarendaja_vastuvott.py"])
             #    lbl4=Label(dopaken,text="You in",height=2,width=40,font="Arial 24")
             #    lbl4.pack()
@@ -74,6 +73,7 @@ def check_registreerimine(ent1,ent2,dopaken):
 
 def registreerimine(): 
     dopaken=Toplevel()
+    dopaken.iconbitmap("images.ico")
     dopaken.geometry("600x600")
     dopaken.title("registreerimine")
     lbl1=Label(dopaken,text="Create login")
@@ -90,6 +90,7 @@ def registreerimine():
 
 def autoriseerimine():
     dopaken=Toplevel()
+    dopaken.iconbitmap("images.ico")
     dopaken.geometry("600x600")
     dopaken.title("autoriseerimine")
     lbl1=Label(dopaken,text="Insert login")
@@ -106,6 +107,7 @@ def autoriseerimine():
 
 def muuda():
     dopaken=Toplevel()
+    dopaken.iconbitmap("images.ico")
     dopaken.geometry("600x600")
     dopaken.title("nime voi parooli muutmine")
     lbl1=Label(dopaken,text="What you want change?",font="Arial 24")
@@ -118,6 +120,7 @@ def muuda():
 def lchange(dopaken):
     dopaken.destroy()
     dopaken2=Toplevel()
+    dopaken2.iconbitmap("images.ico")
     dopaken2.geometry("600x600")
     lbl1=Label(dopaken2,text="Write old Login",font="Arial 24")
     ent1=Entry(dopaken2,fg="blue",bg="lightblue",width=15,font="Arial 20", justify=CENTER)
@@ -158,6 +161,7 @@ def checkl(ent1,ent3,ent2,dopaken2):
 def pchange(dopaken):
     dopaken.destroy()
     dopaken2=Toplevel()
+    dopaken2.iconbitmap("images.ico")
     dopaken2.geometry("600x600")
     lbl3=Label(dopaken2,text="Write your login",font="Arial 24")
     ent3=Entry(dopaken2,fg="blue",bg="lightblue",width=15,font="Arial 20", justify=CENTER)
@@ -197,6 +201,7 @@ def checkp(ent1,ent2,ent3,dopaken2):
 def help():
     dopaken=Toplevel()
     dopaken.geometry("600x600")
+    dopaken.iconbitmap("images.ico")
     dopaken.title("unustanud parooli taastamine")
     lbl1=Label(dopaken,text="Write your login",font="Arial 24")
     ent3=Entry(dopaken,fg="blue",bg="lightblue",width=15,font="Arial 20", justify=CENTER)
@@ -209,6 +214,7 @@ def showpassword(ent3,dopaken):
     yourlogin=ent3.get()
     dopaken.destroy()
     dopaken2=Toplevel()
+    dopaken2.iconbitmap("images.ico")
     dopaken2.geometry("600x600")
     lbl2=Label(dopaken2,text="Your password:",font="Arial 24")
     lbl3=Label(dopaken2,font="Arial 30")

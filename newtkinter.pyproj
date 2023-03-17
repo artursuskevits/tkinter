@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9363cceb-e1e7-4d15-b53b-056eb704857d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tarkvaraarendaja_vastuvott.py</StartupFile>
+    <StartupFile>login.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

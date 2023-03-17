@@ -4,6 +4,12 @@ from tkinter import*
 def leave(newaken):
     newaken.destroy()
 
+def testvisual():
+    akenfortest=Toplevel()
+    akenfortest.geometry("500x500")
+    akenfortest.title("Test")
+    akenfortest.iconbitmap("images.ico")
+    quetionlbl=Label(akenfortest, text="do you want to do a test?", font="Arial 24")
 
 def first_user_choose(testent):
     if testent.get() != "":
@@ -14,7 +20,7 @@ def first_user_choose(testent):
         newaken.iconbitmap("images.ico")
         namelbl=Label(newaken, font="Arial 24")
         questionlbl=Label(newaken, text="do you want to do a test?", font="Arial 24")
-        testbutton=Button(newaken, text="take a test", font="Arial 24",relief=RAISED,command=lambda:first_user_choose)
+        testbutton=Button(newaken, text="take a test", font="Arial 24",relief=RAISED,command=testvisual)
         leavebutton=Button(newaken, text="leave", font="Arial 24",relief=RAISED,command=lambda:leave(newaken))
         strforlbl=testent.get()
         print(strforlbl)
