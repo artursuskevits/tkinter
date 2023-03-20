@@ -26,7 +26,6 @@
     <Compile Include="minumoodul.py" />
     <Compile Include="newtkinter.py" />
     <Compile Include="Tarkvaraarendaja_vastuvott.py" />
-    <Compile Include="класс1.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="eisoobi.txt" />

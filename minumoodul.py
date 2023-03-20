@@ -3,7 +3,6 @@ from tkinter import*
 def test(sonastik:dict,sonastik2:dict,nimi:str,koik:list):
     answer_list=[]
     oige=0
-    
     for jj in range(5):
         answer_list.clear()
         question=choice(list(sonastik))
@@ -38,6 +37,8 @@ def kirjutafaeli(list:list,file:str):
     return file
 
 def sorter(koik:list,vastuvoetud:list,eisoobi:list,koikfail:str,vastuvoetudfail:str,eisoobifail:str):
+    koik.sort(key=lambda a: a[1])
+    koik.reverse()
     koiklen = len(koik)
     kirjutafaeli(koik,koikfail)
     if koiklen >= 5:
@@ -45,7 +46,6 @@ def sorter(koik:list,vastuvoetud:list,eisoobi:list,koikfail:str,vastuvoetudfail:
             if koik[jj][1] <(koik[4][1]):
                 eisoobi.append(koik[jj])
                 eisoobi.sort(key=lambda a: a[0])
-
             else:
                 vastuvoetud.append(koik[jj])
     kirjutafaeli(eisoobi,eisoobifail)
