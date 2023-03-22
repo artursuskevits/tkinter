@@ -12,7 +12,7 @@ def test(sonastik:dict,sonastik2:dict,nimi:str,koik:list):
             answer_list.append(answer)
         print(f"{nimi} {jj+1} kusimus on {question}")
         print('\n'.join(answer_list))
-        #user_answer=int(input("vali oige vastus, sisetades numbrid 1-4"))
+        user_answer=int(input("vali oige vastus, sisetades numbrid 1-4"))
         shuffle(answer_list)
         if str(answer_list[user_answer-1]) == str(sonastik[question]):
             oige +=1

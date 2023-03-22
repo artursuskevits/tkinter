@@ -3,11 +3,14 @@ from minumoodul import *
 from tkinter import*
 from random import*
 
+global sonastiklist
 sonastik={}
 sonastik2={}
+deleatefromtest={}
 koik=[]
 vastuvoetud=[]
 eisoobi=[]
+sonastiklist = list(sonastik)
 global_attempta=0
 txttodictionary(sonastik,sonastik2,"vastus.txt")
 koik = loe_faelist(koik,"koik.txt")
@@ -31,7 +34,11 @@ def countdown_timer():
     if time_remaining > 0:
         time_remaining -= 1
         timerlbl.config(text=f"{time_remaining}")
-        timerlbl.after(1000, countdown_timer) # call this function again in 1 second
+        if not hasattr(countdown_timer, 'timer_id'):
+            countdown_timer.timer_id = None
+        elif countdown_timer.timer_id:
+            timerlbl.after_cancel(countdown_timer.timer_id)
+        countdown_timer.timer_id = timerlbl.after(1000, countdown_timer) 
     else:
         timerlbl.config(text="Time's up!")
         choice_question()
@@ -42,6 +49,8 @@ def rese_timer():
     time_remaining=0
 
 def choice_question():
+    global sonastiklist
+    print(sonastiklist)
     global strforlbl
     global oige
     rese_timer()
@@ -52,15 +61,16 @@ def choice_question():
     global question
     global resultaken
     global_attempta+=1
-    if global_attempta <=5 :
+    if global_attempta <=9 :
         a_list=[]
-        question=choice(list(sonastik))
+        sonastiklist=list(sonastik)
+        question=choice(sonastiklist)
         quetionlbl.configure(text=f"{global_attempta}. {question}")
         a_list.append(str(sonastik[question]))
         for jj2 in range(3):
             answer=choice(list(sonastik2))
             a_list.append(answer)
-        #user_answer=int(input("vali oige vastus, sisetades numbrid 1-4"))
+        sonastiklist.remove(question)
         answer_list=a_list 
         texttobutton=choice(answer_list)
         testbutton1.configure(text=f"{texttobutton}")
@@ -101,15 +111,15 @@ def choice_question():
         resultaken.state('zoomed')
         resultaken.configure(bg='#6d6875')
         leavebtn=Button(resultaken, text="leave", font="Arial 40",command=newleave,bg="#b5838d")
-        oigelbl=Label(resultaken, font="Arial 50 bold",bg='#6d6875',text=f"{strforlbl} your result is {oige}/5")
+        oigelbl=Label(resultaken, font="Arial 50 bold",bg='#6d6875',text=f"{strforlbl} your result is {oige}/")
         accepted_list=Label(resultaken, font="Arial 40",bg='#fca311')
         tahvel3=Canvas(resultaken,width=100,height=100,bg="white")
         tahvel3.create_image(1,1,image=img,anchor=NW)
         oigelbl.configure()
         accepted_list.configure(text=f"VASTUVOETUD ON: {vastuvoetud_string}")
         oigelbl.place(relx = 0.5, rely = 0.1, anchor = CENTER)
-        accepted_list.place(relx = 0.5, rely = 0.4, anchor = CENTER)
-        leavebtn.place(relx = 0.5, rely = 0.8, anchor = CENTER)
+        accepted_list.place(relx = 0.5, rely = 0.55, anchor = CENTER)
+        leavebtn.place(relx = 0.5, rely = 0.9, anchor = CENTER)
         tahvel3.place(anchor = NW)
         
         
