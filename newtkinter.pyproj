@@ -34,6 +34,7 @@
     <Content Include="images.png" />
     <Content Include="dictionary.txt" />
     <Content Include="koik.txt" />
+    <Content Include="tthk.png" />
     <Content Include="vastus.txt" />
     <Content Include="vastuvoetud.txt" />
   </ItemGroup>

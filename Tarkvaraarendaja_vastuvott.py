@@ -1,4 +1,4 @@
-from typing import ItemsView
+
 from minumoodul import *
 from tkinter import*
 from random import*
@@ -34,17 +34,19 @@ def countdown_timer():
         timerlbl.after(1000, countdown_timer) # call this function again in 1 second
     else:
         timerlbl.config(text="Time's up!")
+        choice_question()
+
 
 def rese_timer():
-    global time_remaning
-    time_remaning=0
+    global time_remaining
+    time_remaining=0
 
 def choice_question():
     global strforlbl
     global oige
     rese_timer()
     global time_remaining
-    time_remaining=30
+    time_remaining=100
     countdown_timer()
     global global_attempta
     global question
@@ -85,21 +87,30 @@ def choice_question():
             else item 
             for item in vastuvoetud_string
         ])
+        vastuvoetud_string="".join([
+            ""
+            if item == "(" or item == ")" or item == "'" or item ==","
+            else item 
+            for item in vastuvoetud_string
+        ])
         print(vastuvoetud_string)
         akenfortest.destroy()
         resultaken=Toplevel()
         resultaken.title("Test")
         resultaken.iconbitmap("images.ico")
         resultaken.state('zoomed')
-        leavebtn=Button(resultaken, text="leave", font="Arial 24",command=newleave)
-        oigelbl=Label(resultaken, font="Arial 24")
-        accepted_list=Label(resultaken, font="Arial 24")
+        resultaken.configure(bg='#6d6875')
+        leavebtn=Button(resultaken, text="leave", font="Arial 40",command=newleave,bg="#b5838d")
+        oigelbl=Label(resultaken, font="Arial 40 bold",bg='#6d6875')
+        accepted_list=Label(resultaken, font="Arial 40",bg='#6d6875')
+        tahvel3=Canvas(resultaken,width=100,height=100,bg="white")
+        tahvel3.create_image(1,1,image=img,anchor=NW)
         oigelbl.configure(text=f"{strforlbl} your result is {oige}/5")
-        print(vastuvoetud_string)
         accepted_list.configure(text=f"vastuvoetud on {vastuvoetud_string}")
-        oigelbl.pack()
-        accepted_list.pack()
-        leavebtn.pack()
+        oigelbl.place(relx = 0.5, rely = 0.1, anchor = CENTER)
+        accepted_list.place(relx = 0.5, rely = 0.4, anchor = CENTER)
+        leavebtn.place(relx = 0.5, rely = 0.8, anchor = CENTER)
+        tahvel3.place(anchor = NW)
         
         
 def newleave ():
@@ -132,26 +143,27 @@ def testvisual(newaken,testaken):
     akenfortest.state('zoomed')
     akenfortest.title("Test")
     akenfortest.iconbitmap("images.ico")
-    quetionlbl=Label(akenfortest, text="do you want to do a test?", font="Arial 24")
-    timerlbl=Label(akenfortest,text="Good Luck!",  font="Arial 24")
+    akenfortest.configure(bg='#6d6875')
+    quetionlbl=Label(akenfortest, text="do you want to do a test?", font="Arial 40 bold",bg="#6d6875")
+    timerlbl=Label(akenfortest,text="Good Luck!",  font="Arial 40 bold",bg="#6d6875")
     newaken.destroy()
-    testbutton1=Button(akenfortest,  font="Arial 10",relief=RAISED,command=lambda:[check_answer(testbutton1),choice_question()])
-    testbutton2=Button(akenfortest, font="Arial 10",relief=RAISED,command=lambda:[check_answer(testbutton2),choice_question()])
-    testbutton3=Button(akenfortest, font="Arial 10",relief=RAISED,command=lambda:[check_answer(testbutton3),choice_question()])
-    testbutton4=Button(akenfortest,  font="Arial 10",relief=RAISED,command=lambda:[check_answer(testbutton4),choice_question()])
-    answer_list=[]
-    questioncounter=0
+    testbutton1=Button(akenfortest,  font="Arial 17",relief=RAISED,command=lambda:[check_answer(testbutton1),choice_question()],height= 4, width=70,wraplength=600, justify=CENTER,bg="#fca311")
+    testbutton2=Button(akenfortest, font="Arial 17",relief=RAISED,command=lambda:[check_answer(testbutton2),choice_question()],height= 4, width=70, wraplength=600,justify=CENTER,bg="#ffcdb2")
+    testbutton3=Button(akenfortest, font="Arial 17",relief=RAISED,command=lambda:[check_answer(testbutton3),choice_question()],height= 4, width=70,wraplength=600, justify=CENTER,bg="#ffb4a2")
+    testbutton4=Button(akenfortest,  font="Arial 17",relief=RAISED,command=lambda:[check_answer(testbutton4),choice_question()],height= 4, width=70,wraplength=600, justify=CENTER,bg="#e5989b")
+    tahvel3=Canvas(akenfortest,width=100,height=100,bg="white")
+    tahvel3.create_image(1,1,image=img,anchor=NW)
     if global_attempta <= 5:
         answer_list = choice_question()
        
-
+        tahvel3.place(anchor = NW)
         akenfortest.update()
-        timerlbl.pack()
-        quetionlbl.pack()
-        testbutton1.pack()
-        testbutton2.pack()
-        testbutton3.pack()
-        testbutton4.pack()
+        timerlbl.place(relx = 0.2, rely = 0.1, anchor = CENTER)
+        quetionlbl.place(relx = 0.5, rely = 0.1, anchor = CENTER)
+        testbutton1.place(relx = 0.25, rely = 0.4, anchor = CENTER)
+        testbutton2.place(relx = 0.75, rely = 0.4, anchor = CENTER)
+        testbutton3.place(relx = 0.25, rely = 0.6, anchor = CENTER)
+        testbutton4.place(relx = 0.75, rely = 0.6, anchor = CENTER)
         akenfortest.update()
 
 
@@ -161,19 +173,20 @@ def first_user_choose(testent,testaken):
     if testent.get() != "":
         name=testent.get
         newaken=Toplevel()
-        newaken.geometry("500x500")
+        newaken.geometry("600x600+200+100")
         newaken.title("Test")
         newaken.iconbitmap("images.ico")
-        namelbl=Label(newaken, font="Arial 24")
-        questionlbl=Label(newaken, text="do you want to do a test?", font="Arial 24")
-        testbutton=Button(newaken, text="take a test", font="Arial 24",relief=RAISED,command=lambda:testvisual(newaken,testaken))
-        leavebutton=Button(newaken, text="leave", font="Arial 24",relief=RAISED,command=lambda:leave(newaken,testaken))
+        newaken.configure(bg='#6d6875')
         strforlbl=testent.get()
-        namelbl.configure(text=f"hello {strforlbl}")
-        questionlbl.pack()
-        namelbl.pack()
-        testbutton.pack()
-        leavebutton.pack()
+        questionlbl=Label(newaken, text=f"{strforlbl} kas soovite teha testi?", font="Times_New:_Roman 30 bold",bg="#6d6875")
+        testbutton=Button(newaken, text="Teha test", font="Arial 24",relief=RAISED,command=lambda:testvisual(newaken,testaken),bg="#b5838d")
+        leavebutton=Button(newaken, text="Jata", font="Arial 24",relief=RAISED,command=lambda:leave(newaken,testaken),bg="#b5838d")
+        tahvel2=Canvas(newaken,width=100,height=100,bg="white")
+        tahvel2.create_image(1,1,image=img,anchor=NW)
+        questionlbl.place(relx = 0.5, rely = 0.3, anchor = CENTER)
+        testbutton.place(relx = 0.3, rely = 0.5, anchor = CENTER)
+        leavebutton.place(relx = 0.7, rely = 0.5, anchor = CENTER)
+        tahvel2.place(anchor = NW)
     else:
         testent.configure(bg="red")
     
@@ -183,18 +196,24 @@ def first_user_choose(testent,testaken):
 
 global testaken
 testaken=Tk()
-testaken.geometry("450x450")
+testaken.geometry("600x600+200+100")
 testaken.title("Test")
 testaken.iconbitmap("images.ico")
+testaken.configure(bg='#6d6875')
 
+terelbl=Label(testaken,text="Tere!",font="Times_New_Roman 36 bold",bg="#6d6875")
+testlbl=Label(testaken,text="Palun, kirjuta sinu nimi",font="Arial 34",bg="#6d6875")
+testent=Entry(testaken,fg="blue",bg="lightblue",width=15,font="Arial 20",background="#b5838d",foreground="black", justify=CENTER)
+testbtn=Button(testaken, text="Alustada", font="Arial 24",relief=RAISED,command=lambda:first_user_choose(testent,testaken),bg="#b5838d")
+tahvel=Canvas(testaken,width=100,height=100,bg="white")
+img=PhotoImage(file="tthk.png")
+img_cast=tahvel.create_image(1,1,image=img,anchor=NW)
 
-testlbl=Label(testaken,text="Kirjuta sinu nimi",font="Arial 24")
-testent=Entry(testaken,fg="blue",bg="lightblue",width=15,font="Arial 20", justify=CENTER)
-testbtn=Button(testaken, text="alustada", font="Arial 24",relief=RAISED,command=lambda:first_user_choose(testent,testaken))
-
-testlbl.pack()
-testent.pack()
-testbtn.pack()
+terelbl.place(relx = 0.5, rely = 0.15, anchor = CENTER)
+testlbl.place(relx = 0.5, rely = 0.35, anchor = CENTER)
+testent.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+testbtn.place(relx = 0.5, rely = 0.6, anchor = CENTER)
+tahvel.place(anchor = NW)
 testaken.mainloop()
 
 koik = loe_faelist(koik,"koik.txt")
@@ -202,8 +221,8 @@ koik = loe_faelist(koik,"koik.txt")
 
     
 
-nimi=input("kirjuta siinu eesnimi ja perenimi ")
-menu=int(input(f"{nimi} te soovite testi teha, \n1-yah \n2-ei"))
+#nimi=input("kirjuta siinu eesnimi ja perenimi ")
+#menu=int(input(f"{nimi} te soovite testi teha, \n1-yah \n2-ei"))
 #if menu==1:
 #    koik=test(sonastik,sonastik2,nimi,koik)
     
@@ -211,10 +230,10 @@ menu=int(input(f"{nimi} te soovite testi teha, \n1-yah \n2-ei"))
 #    sorter(koik,vastuvoetud,eisoobi,"koik.txt","vastuvoetud.txt","eisoobi.txt")
 
     
-print("Vastuvoetud:")
-printfile("vastuvoetud.txt")
-print("eisoobi:")
-printfile("Eisoobi.txt")
+#print("Vastuvoetud:")
+#printfile("vastuvoetud.txt")
+#print("eisoobi:")
+#printfile("Eisoobi.txt")
 
 
 

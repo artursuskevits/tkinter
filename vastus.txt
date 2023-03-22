@@ -7,7 +7,7 @@ What is an algorithm in programming-is a set of instructions that a program foll
 What is debugging in programming-is the process of finding and fixing errors or defects in a program.
 What is an IDE in programming-is a software application that provides tools and features to help developers write and debug code.
 What is version control in programming-is the management of changes to a set of files over time, typically used in software development to track changes to source code.
-What is a data structure in programming-s a way of organizing and storing data in a computer's memory, such as arrays, lists, or trees.
+What is a data structure in programming-is a way of organizing and storing data in a computer's memory, such as arrays, lists, or trees.
 What is object oriented programming- is a programming paradigm that uses objects, which are instances of classes, to represent and manipulate data.
 What is a class in programming-is a blueprint for creating objects that define the attributes and behaviors of the object.
 What is inheritance in programming-is a mechanism in object oriented programming that allows a class to inherit attributes and behaviors from a parent class.
