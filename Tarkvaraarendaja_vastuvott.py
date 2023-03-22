@@ -49,17 +49,16 @@ def rese_timer():
     time_remaining=0
 
 def choice_question():
+    global time_remaining
     global sonastiklist
-    print(sonastiklist)
     global strforlbl
     global oige
-    rese_timer()
-    global time_remaining
-    time_remaining=100
-    countdown_timer()
     global global_attempta
     global question
     global resultaken
+    rese_timer()
+    time_remaining=100
+    countdown_timer()
     global_attempta+=1
     if global_attempta <=9 :
         a_list=[]
