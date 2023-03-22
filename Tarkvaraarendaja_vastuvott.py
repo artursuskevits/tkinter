@@ -102,7 +102,7 @@ def choice_question():
         resultaken.configure(bg='#6d6875')
         leavebtn=Button(resultaken, text="leave", font="Arial 40",command=newleave,bg="#b5838d")
         oigelbl=Label(resultaken, font="Arial 50 bold",bg='#6d6875',text=f"{strforlbl} your result is {oige}/5")
-        accepted_list=Label(resultaken, font="Arial 40",bg='#6d6875')
+        accepted_list=Label(resultaken, font="Arial 40",bg='#fca311')
         tahvel3=Canvas(resultaken,width=100,height=100,bg="white")
         tahvel3.create_image(1,1,image=img,anchor=NW)
         oigelbl.configure()
