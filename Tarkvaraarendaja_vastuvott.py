@@ -36,7 +36,7 @@ def countdown_timer():
         timerlbl.config(text=f"{time_remaining}")
         if not hasattr(countdown_timer, 'timer_id'):
             countdown_timer.timer_id = None
-        elif countdown_timer.timer_id:
+        else:
             timerlbl.after_cancel(countdown_timer.timer_id)
         countdown_timer.timer_id = timerlbl.after(1000, countdown_timer) 
     else:
@@ -111,7 +111,7 @@ def choice_question():
         resultaken.state('zoomed')
         resultaken.configure(bg='#6d6875')
         leavebtn=Button(resultaken, text="leave", font="Arial 40",command=newleave,bg="#b5838d")
-        oigelbl=Label(resultaken, font="Arial 50 bold",bg='#6d6875',text=f"{strforlbl} your result is {oige}/")
+        oigelbl=Label(resultaken, font="Arial 50 bold",bg='#6d6875',text=f"{strforlbl} your result is {oige}/9")
         accepted_list=Label(resultaken, font="Arial 40",bg='#fca311')
         tahvel3=Canvas(resultaken,width=100,height=100,bg="white")
         tahvel3.create_image(1,1,image=img,anchor=NW)
